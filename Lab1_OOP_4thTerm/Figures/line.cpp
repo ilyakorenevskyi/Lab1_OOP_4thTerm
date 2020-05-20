@@ -1,5 +1,9 @@
 #include "line.h"
 	line::line(double k, double b) : k(k), b(b) {}
+	line::line(point first, point second){
+		k = second.getY() - first.getY();
+		b = first.getY() - k * first.getX();
+	}
 	line::line() : k(0), b(0) {}
 	bool operator<(line& a, line& b) {
 		return  a.k < b.k;
@@ -31,8 +35,8 @@
 		return std::cout;
 	}
 	line* line::reflect(line a) {
-		double tg = abs((a.k - k) / (1 + a.k * k));
-		double newk = (tg + a.k) / (1 - a.k * tg);
+		double tg = abs((a.getK() - k) / (1 + a.getK() * k));
+		double newk = (tg + a.getK()) / (1 - a.getK() * tg);
 		point temp(*this, a);
 		double newb = temp.getX() - temp.getY() * newk;
 		return new line(newk, newb);

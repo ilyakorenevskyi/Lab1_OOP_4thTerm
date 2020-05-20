@@ -13,6 +13,8 @@ public:
 	point(line l1, line l2);
 	double getX();
 	double getY();
+	void setX(double);
+	void setY(double);
 	void output();
 	point* reflect(line a) ;
 	point* invert(circle a) ;

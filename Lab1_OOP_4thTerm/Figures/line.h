@@ -8,6 +8,7 @@ class line : public Figure {
 	double b;
 public:
 	line(double k, double b);
+	line(point first, point second);
 	line();
 	double getK();
 	double getB();

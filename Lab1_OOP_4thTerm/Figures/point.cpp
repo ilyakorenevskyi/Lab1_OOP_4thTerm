@@ -14,6 +14,12 @@
 	{
 		return y;
 	}
+	void point::setX(double x ){
+		this->x = x;
+	}
+	void point::setY(double y){
+		this->y = y;
+	}
 	point* point::invert(circle a) {
 		return new point(a.getCenter().x + pow(a.getRad(), 2) * (x - a.getCenter().x) / (pow((x - a.getCenter().x), 2) + pow((y - a.getCenter().y), 2)), a.getCenter().y + pow(a.getRad(), 2) * (y - a.getCenter().y) / (pow((x - a.getCenter().x), 2) + pow((y - a.getCenter().y), 2)));
 	}

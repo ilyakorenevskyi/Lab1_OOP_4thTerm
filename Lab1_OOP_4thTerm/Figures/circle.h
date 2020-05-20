@@ -15,6 +15,7 @@ public:
 	point getCenter();
 	circle* reflect(line a);
 	Figure* invert(circle a)  override;
+	bool checkPoint(point to_check);
 	void output();
 	friend bool operator<(circle& a, circle& b);
 	friend bool operator>(circle& a, circle& b);
